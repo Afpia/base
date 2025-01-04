@@ -67,6 +67,21 @@ export const eslint = ({ jsxA11y = false, react = false, ...options }, ...config
 			rules: {
 				'style/indent': 'off',
 				'style/no-tabs': 'off',
+				'style/operator-linebreak': 'off',
+				'style/member-delimiter-style': [
+					'error',
+					{
+						multiline: {
+							delimiter: 'none',
+							requireLast: false
+						},
+						singleline: {
+							delimiter: 'semi',
+							requireLast: false
+						}
+					}
+				],
+				'style/quote-props': ['error', 'as-needed'],
 				'style/brace-style': 'off',
 				'style/comma-dangle': ['error', 'never'],
 				'style/jsx-quotes': ['error', 'prefer-single'],
@@ -92,6 +107,7 @@ export const eslint = ({ jsxA11y = false, react = false, ...options }, ...config
 			name: '@afpia/rewrite',
 			rules: {
 				'antfu/top-level-function': 'off',
+				'antfu/if-newline': 'off',
 				'no-shadow': 'error',
 				'no-console': 'warn',
 				'no-warning-comments': ['warn', { terms: ['todo', 'fixme', 'mb', 'note'], location: 'anywhere' }],
@@ -118,11 +134,9 @@ export const eslint = ({ jsxA11y = false, react = false, ...options }, ...config
 							// External packages
 							['^react', '^@?\\w'],
 							// Internal packages
-							['^@(\\w+/)?\\w+/.*$'],
+							['^(?!@(utils|assets|shared|widgets|entities|pages|features|app|ui|api)(/.*|$)).*@'],
 							// Alias imports
-							['^@((\\w|_)?\\w)\\/assets|test-utils'],
-							// Side effect imports
-							['^\\u0000'],
+							['^(@utils|@assets|@shared|@widgets|@entities|@pages|@features|@app|@ui|@api)(/.*)$'],
 							// Parent imports
 							['^\\.\\.(?!/?$)', '^\\.\\./?$'],
 							// Other relative imports
