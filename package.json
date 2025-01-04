@@ -1,0 +1,27 @@
+{
+  "name": "@afpia/base",
+  "version": "1.0.0",
+	"license": "MIT",
+  "keywords": [
+    "prettier",
+    "eslint",
+    "commitlint",
+    "stylelint"
+  ],
+	"private": true,
+	"author": {
+	 "name": "Afpia",
+	 "url": "https://github.com/Afpia"
+ 	},
+	"bugs": {
+		"url": "https://github.com/Afpia/base/issues"
+	},
+	"homepage": "https://github.com/Afpia/base",
+	"repository": {
+		"url": "https://github.com/Afpia/base"
+	},
+  "workspaces": [
+    "packages/*"
+  ],
+	"packageManager": "pnpm@9.10.0"
+}

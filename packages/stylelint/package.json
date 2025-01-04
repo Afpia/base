@@ -1,0 +1,43 @@
+{
+	"name": "@afpia/stylelint",
+	"version": "1.0.4",
+	"description": "Stylelint config",
+	"type": "module",
+	"main": "index.js",
+	"keywords": [
+		"stylelint",
+		"config"
+	],
+	"author": {
+		"name": "Afpia",
+		"url": "https://github.com/Afpia"
+	},
+	"bugs": {
+		"url": "https://github.com/Afpia/stylelint/issues"
+	},
+	"homepage": "https://github.com/Afpia/stylelint",
+	"repository": {
+		"url": "https://github.com/Afpia/stylelint"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"stylelint.config.js",
+		"index.d.ts"
+	],
+	"types": "index.d.ts",
+	"license": "MIT",
+	"peerDependencies": {
+		"stylelint": "^16.9.0"
+	},
+	"dependencies": {
+		"stylelint": "^16.9.0",
+		"stylelint-config-clean-order": "^6.1.0",
+		"stylelint-config-standard-scss": "^13.1.0",
+		"stylelint-order": "^6.0.4"
+	},
+	"devDependencies": {
+		"@afpia/prettier": "*"
+	}
+}

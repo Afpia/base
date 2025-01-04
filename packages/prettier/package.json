@@ -1,0 +1,37 @@
+{
+	"name": "@afpia/prettier",
+	"version": "1.0.4",
+	"description": "Prettier config",
+	"type": "module",
+	"main": "index.js",
+	"keywords": [
+		"prettier",
+		"config"
+	],
+	"author": {
+		"name": "Afpia",
+		"url": "https://github.com/Afpia"
+	},
+	"bugs": {
+		"url": "https://github.com/Afpia/prettier/issues"
+	},
+	"homepage": "https://github.com/Afpia/prettier",
+	"repository": {
+		"url": "https://github.com/Afpia/prettier"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"prettier.config.js",
+		"index.d.ts"
+	],
+	"types": "index.d.ts",
+	"license": "MIT",
+	"peerDependencies": {
+		"prettier": "^3.3.3"
+	},
+	"dependencies": {
+		"prettier": "^3.3.3"
+	}
+}
