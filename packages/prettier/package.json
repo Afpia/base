@@ -1,6 +1,6 @@
 {
 	"name": "@afpia/prettier",
-	"version": "1.0.4",
+	"version": "1.1.0",
 	"description": "Prettier config",
 	"type": "module",
 	"main": "index.js",
@@ -32,6 +32,7 @@
 		"prettier": "^3.3.3"
 	},
 	"dependencies": {
-		"prettier": "^3.3.3"
+		"prettier": "^3.3.3",
+		"@ianvs/prettier-plugin-sort-imports": "^4.4.0"
 	}
 }

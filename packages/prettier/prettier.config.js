@@ -6,6 +6,23 @@ export default {
 	singleQuote: true,
 	tabWidth: 2,
 	semi: false,
-	arrowParens: 'avoid',
-	printWidth: 130
+	arrowParens: 'always',
+	printWidth: 130,
+	importOrder: [
+		'<BUILTIN_MODULES>',
+		'^react$',
+		'^(.*react.*)$',
+		'<THIRD_PARTY_MODULES>',
+		'',
+		'^(?!@(utils|assets|shared|widgets|entities|pages|features|app|ui|api)(/.*|$)).*@',
+		'',
+		'^(@utils|@assets|@shared|@widgets|@entities|@pages|@features|@app|@ui|@api)(/.*)$',
+		'',
+		'^\\.\\./.*$',
+		'',
+		'^(?!.*[.](css|scss)$)[./].*$',
+		'',
+		'.(css|scss)$'
+	],
+	plugins: ['@ianvs/prettier-plugin-sort-imports']
 }
