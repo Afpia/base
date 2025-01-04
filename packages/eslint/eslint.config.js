@@ -1,22 +1,35 @@
 import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
 import pluginReact from 'eslint-plugin-react'
+import pluginNext from '@next/eslint-plugin-next'
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 
 import antfu from '@antfu/eslint-config'
 
 /** @type {import('@afpia/eslint').Eslint} */
-export const eslint = ({ jsxA11y = false, react = false, ...options }, ...configs) => {
-	if (jsxA11y) {
+export const eslint = ({ ...options }, ...configs) => {
+	if (options.jsxA11y) {
 		configs.unshift({
 			name: '@afpia/jsx-a11y',
 			plugins: { 'jsx-a11y': pluginJsxA11y },
 			rules: {
-				...pluginJsxA11y.configs.recommended
+				...pluginJsxA11y.flatConfigs.recommended.rules
 			}
 		})
 	}
 
-	if (react) {
+	if (options.next) {
+		configs.unshift({
+			name: '@afpia/next',
+			plugins: {
+				next: pluginNext
+			},
+			rules: {
+				...pluginNext.configs.recommended.rules
+			}
+		})
+	}
+
+	if (options.react) {
 		configs.unshift({
 			name: '@afpia/react',
 			settings: {
@@ -44,24 +57,7 @@ export const eslint = ({ jsxA11y = false, react = false, ...options }, ...config
 		})
 	}
 
-	if (options.typescript) {
-		configs.unshift({
-			name: '@afpia/typescript',
-			rules: {
-				'ts/consistent-type-imports': [
-					'error',
-					{
-						disallowTypeAnnotations: false,
-						prefer: 'type-imports',
-						fixStyle: 'inline-type-imports'
-					}
-				]
-			}
-		})
-	}
-
 	return antfu(
-		{ ...options },
 		{
 			name: '@afpia/stylistic',
 			rules: {
@@ -132,7 +128,7 @@ export const eslint = ({ jsxA11y = false, react = false, ...options }, ...config
 					{
 						groups: [
 							// External packages
-							['^react', '^@?\\w'],
+							['^node:', '^react', '^(.*react.*)$', '^'],
 							// Internal packages
 							['^(?!@(utils|assets|shared|widgets|entities|pages|features|app|ui|api)(/.*|$)).*@'],
 							// Alias imports
