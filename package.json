@@ -25,9 +25,9 @@
 		"packages/*"
 	],
 	"scripts": {
-		"publish": "beachball publish",
+		"publish": "beachball publish --yes",
 		"checkchange": "beachball check",
-		"change": "beachball change"
+		"change": "beachball change --no-commit"
 	},
 	"packageManager": "pnpm@9.10.0",
 	"devDependencies": {
