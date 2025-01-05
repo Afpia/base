@@ -1,1 +1,1 @@
-# Eslint config
+# Eslint config 🎉
