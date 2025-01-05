@@ -26,12 +26,12 @@
 		"commitizen": "^4.3.0"
 	},
 	"repository": {
-		"url": "https://github.com/Afpia/commitlint"
+		"url": "https://github.com/Afpia/base"
 	},
 	"bugs": {
-		"url": "https://github.com/Afpia/commitlint/issues"
+		"url": "https://github.com/Afpia/base/issues"
 	},
-	"homepage": "https://github.com/Afpia/commitlint",
+	"homepage": "https://github.com/Afpia/base",
 	"files": [
 		"commitlint.config.js",
 		"index.d.ts"

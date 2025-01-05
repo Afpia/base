@@ -24,5 +24,13 @@
 	"workspaces": [
 		"packages/*"
 	],
-	"packageManager": "pnpm@9.10.0"
+	"scripts": {
+		"publish": "beachball publish",
+		"checkchange": "beachball check",
+		"change": "beachball change"
+	},
+	"packageManager": "pnpm@9.10.0",
+	"devDependencies": {
+		"beachball": "^2.51.0"
+	}
 }

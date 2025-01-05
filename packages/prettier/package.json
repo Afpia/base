@@ -13,11 +13,11 @@
 		"url": "https://github.com/Afpia"
 	},
 	"bugs": {
-		"url": "https://github.com/Afpia/prettier/issues"
+		"url": "https://github.com/Afpia/base/issues"
 	},
-	"homepage": "https://github.com/Afpia/prettier",
+	"homepage": "https://github.com/Afpia/base",
 	"repository": {
-		"url": "https://github.com/Afpia/prettier"
+		"url": "https://github.com/Afpia/base"
 	},
 	"publishConfig": {
 		"access": "public"

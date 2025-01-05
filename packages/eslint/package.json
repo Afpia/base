@@ -8,12 +8,12 @@
 		"url": "https://github.com/Afpia"
 	},
 	"license": "MIT",
-	"homepage": "https://github.com/Afpia/eslint",
+	"homepage": "https://github.com/Afpia/base",
 	"repository": {
-		"url": "https://github.com/Afpia/eslint"
+		"url": "https://github.com/Afpia/base"
 	},
 	"bugs": {
-		"url": "https://github.com/Afpia/eslint/issues"
+		"url": "https://github.com/Afpia/base/issues"
 	},
 	"keywords": [
 		"eslint",
