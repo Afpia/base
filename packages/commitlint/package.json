@@ -1,43 +1,43 @@
 {
-	"name": "@afpia/commitlint",
-	"version": "1.0.7",
-	"description": "Commitlint config",
-	"main": "index.js",
-	"type": "module",
-	"keywords": [
-		"commitlint",
-		"config"
-	],
-	"author": {
-		"name": "Afpia",
-		"url": "https://github.com/Afpia"
-	},
-	"license": "MIT",
-	"dependencies": {
-		"@commitlint/cli": "^19.5.0",
-		"@commitlint/cz-commitlint": "^19.5.0",
-		"@commitlint/types": "^19.5.0",
-		"commitizen": "^4.3.0"
-	},
-	"devDependencies": {
-		"@afpia/prettier": "*"
-	},
-	"peerDependencies": {
-		"commitizen": "^4.3.0"
-	},
-	"repository": {
-		"url": "https://github.com/Afpia/base"
-	},
-	"bugs": {
-		"url": "https://github.com/Afpia/base/issues"
-	},
-	"homepage": "https://github.com/Afpia/base",
-	"files": [
-		"commitlint.config.js",
-		"index.d.ts"
-	],
-	"publishConfig": {
-		"access": "public"
-	},
-	"types": "index.d.ts"
+  "name": "@afpia/commitlint",
+  "version": "1.0.8",
+  "description": "Commitlint config",
+  "main": "index.js",
+  "type": "module",
+  "keywords": [
+    "commitlint",
+    "config"
+  ],
+  "author": {
+    "name": "Afpia",
+    "url": "https://github.com/Afpia"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/cz-commitlint": "^19.5.0",
+    "@commitlint/types": "^19.5.0",
+    "commitizen": "^4.3.0"
+  },
+  "devDependencies": {
+    "@afpia/prettier": "*"
+  },
+  "peerDependencies": {
+    "commitizen": "^4.3.0"
+  },
+  "repository": {
+    "url": "https://github.com/Afpia/base"
+  },
+  "bugs": {
+    "url": "https://github.com/Afpia/base/issues"
+  },
+  "homepage": "https://github.com/Afpia/base",
+  "files": [
+    "commitlint.config.js",
+    "index.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "types": "index.d.ts"
 }
