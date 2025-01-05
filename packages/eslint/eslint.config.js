@@ -1,9 +1,9 @@
-import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
 import pluginReact from 'eslint-plugin-react'
-import pluginNext from '@next/eslint-plugin-next'
+import pluginJsxA11y from 'eslint-plugin-jsx-a11y'
 import pluginSimpleImportSort from 'eslint-plugin-simple-import-sort'
 
 import antfu from '@antfu/eslint-config'
+import pluginNext from '@next/eslint-plugin-next'
 
 /** @type {import('@afpia/eslint').Eslint} */
 export const eslint = ({ ...options }, ...configs) => {
@@ -21,7 +21,7 @@ export const eslint = ({ ...options }, ...configs) => {
 		configs.unshift({
 			name: '@afpia/next',
 			plugins: {
-				next: pluginNext
+				'@next/next': pluginNext
 			},
 			rules: {
 				...pluginNext.configs.recommended.rules
@@ -110,6 +110,52 @@ export const eslint = ({ ...options }, ...configs) => {
 				'no-inline-comments': 'error',
 				'prefer-arrow-callback': 'warn',
 				'arrow-body-style': ['warn', 'as-needed']
+			}
+		},
+		{
+			name: '@afpia/perfectionist',
+			rules: {
+				'perfectionist/sort-interfaces': [
+					'error',
+					{
+						groups: ['unknown', 'method', 'multiline'],
+						order: 'asc',
+						type: 'alphabetical'
+					}
+				],
+				'perfectionist/sort-jsx-props': [
+					'error',
+					{
+						customGroups: {
+							callback: 'on*'
+						},
+						groups: ['unknown', 'shorthand', 'multiline', 'callback'],
+						order: 'asc',
+						type: 'alphabetical'
+					}
+				],
+				'perfectionist/sort-union-types': [
+					'error',
+					{
+						groups: [
+							'conditional',
+							'function',
+							'import',
+							'intersection',
+							'keyword',
+							'literal',
+							'named',
+							'object',
+							'operator',
+							'tuple',
+							'union',
+							'nullish'
+						],
+						order: 'asc',
+						specialCharacters: 'keep',
+						type: 'alphabetical'
+					}
+				]
 			}
 		},
 		{
