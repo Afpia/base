@@ -1,0 +1,20 @@
+{
+  "name": "@afpia/stylelint",
+  "entries": [
+    {
+      "date": "Sun, 05 Jan 2025 13:29:20 GMT",
+      "version": "1.0.5",
+      "tag": "@afpia/stylelint_v1.0.5",
+      "comments": {
+        "patch": [
+          {
+            "author": "nikiprostoff@gmail.com",
+            "package": "@afpia/stylelint",
+            "commit": "not available",
+            "comment": "Исправление package.json"
+          }
+        ]
+      }
+    }
+  ]
+}

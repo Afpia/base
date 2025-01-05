@@ -1,0 +1,20 @@
+{
+  "name": "@afpia/commitlint",
+  "entries": [
+    {
+      "date": "Sun, 05 Jan 2025 13:29:20 GMT",
+      "version": "1.0.8",
+      "tag": "@afpia/commitlint_v1.0.8",
+      "comments": {
+        "patch": [
+          {
+            "author": "nikiprostoff@gmail.com",
+            "package": "@afpia/commitlint",
+            "commit": "not available",
+            "comment": "Исправление package.json"
+          }
+        ]
+      }
+    }
+  ]
+}

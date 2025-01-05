@@ -1,0 +1,20 @@
+{
+  "name": "@afpia/eslint",
+  "entries": [
+    {
+      "date": "Sun, 05 Jan 2025 13:29:20 GMT",
+      "version": "1.2.1",
+      "tag": "@afpia/eslint_v1.2.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "nikiprostoff@gmail.com",
+            "package": "@afpia/eslint",
+            "commit": "not available",
+            "comment": "Исправление package.json"
+          }
+        ]
+      }
+    }
+  ]
+}

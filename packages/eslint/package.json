@@ -1,52 +1,52 @@
 {
-	"name": "@afpia/eslint",
-	"type": "module",
-	"version": "1.2.0",
-	"description": "Eslint config",
-	"author": {
-		"name": "Afpia",
-		"url": "https://github.com/Afpia"
-	},
-	"license": "MIT",
-	"homepage": "https://github.com/Afpia/base",
-	"repository": {
-		"url": "https://github.com/Afpia/base"
-	},
-	"bugs": {
-		"url": "https://github.com/Afpia/base/issues"
-	},
-	"keywords": [
-		"eslint",
-		"config"
-	],
-	"publishConfig": {
-		"access": "public"
-	},
-	"main": "index.js",
-	"types": "index.d.ts",
-	"files": [
-		"eslint.config.js",
-		"index.d.ts"
-	],
-	"scripts": {
-		"lint": "eslint .",
-		"lint:fix": "eslint . --fix"
-	},
-	"peerDependencies": {
-		"eslint": "^9.12.0"
-	},
-	"dependencies": {
-		"@antfu/eslint-config": "^3.7.3",
-		"@eslint-react/eslint-plugin": "^1.14.3",
-		"@next/eslint-plugin-next": "^15.0.3",
-		"eslint": "^9.12.0",
-		"eslint-plugin-jsx-a11y": "^6.10.0",
-		"eslint-plugin-react": "^7.37.1",
-		"eslint-plugin-react-hooks": "^5.0.0",
-		"eslint-plugin-react-refresh": "^0.4.12",
-		"eslint-plugin-simple-import-sort": "^12.1.1"
-	},
-	"devDependencies": {
-		"@afpia/prettier": "*"
-	}
+  "name": "@afpia/eslint",
+  "type": "module",
+  "version": "1.2.1",
+  "description": "Eslint config",
+  "author": {
+    "name": "Afpia",
+    "url": "https://github.com/Afpia"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/Afpia/base",
+  "repository": {
+    "url": "https://github.com/Afpia/base"
+  },
+  "bugs": {
+    "url": "https://github.com/Afpia/base/issues"
+  },
+  "keywords": [
+    "eslint",
+    "config"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "eslint.config.js",
+    "index.d.ts"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "eslint": "^9.12.0"
+  },
+  "dependencies": {
+    "@antfu/eslint-config": "^3.7.3",
+    "@eslint-react/eslint-plugin": "^1.14.3",
+    "@next/eslint-plugin-next": "^15.0.3",
+    "eslint": "^9.12.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.12",
+    "eslint-plugin-simple-import-sort": "^12.1.1"
+  },
+  "devDependencies": {
+    "@afpia/prettier": "*"
+  }
 }
