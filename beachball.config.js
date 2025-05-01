@@ -1,7 +1,10 @@
 /** @type {import('beachball').BeachballConfig} */
 
-module.exports = {
+const config = {
 	bumpDeps: true,
 	access: 'public',
-	branch: 'origin/main'
+	branch: 'origin/main',
+	scope: ['packages/*']
 }
+
+export default config
