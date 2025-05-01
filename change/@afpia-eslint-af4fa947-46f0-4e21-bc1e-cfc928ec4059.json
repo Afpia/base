@@ -1,7 +1,0 @@
-{
-  "type": "minor",
-  "comment": "Исправил config eslint",
-  "packageName": "@afpia/eslint",
-  "email": "nikiprostoff@gmail.com",
-  "dependentChangeType": "patch"
-}
