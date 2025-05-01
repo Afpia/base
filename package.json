@@ -26,7 +26,7 @@
 	],
 	"scripts": {
 		"publish": "beachball publish --yes",
-		"checkchange": "beachball check",
+		"check": "beachball check",
 		"change": "beachball change --no-commit"
 	},
 	"packageManager": "pnpm@9.10.0",
