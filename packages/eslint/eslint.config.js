@@ -57,7 +57,98 @@ export const eslint = ({ ...options }, ...configs) => {
 		})
 	}
 
+	if (options.perfectionist) {
+		configs.unshift({
+			name: '@afpia/perfectionist',
+			rules: {
+				'perfectionist/sort-interfaces': [
+					'warn',
+					{
+						groups: ['unknown', 'method', 'multiline'],
+						order: 'asc',
+						type: 'alphabetical'
+					}
+				],
+				'perfectionist/sort-jsx-props': [
+					'warn',
+					{
+						customGroups: {
+							callback: 'on*'
+						},
+						groups: ['unknown', 'shorthand', 'multiline', 'callback'],
+						order: 'asc',
+						type: 'alphabetical'
+					}
+				],
+				'perfectionist/sort-union-types': [
+					'warn',
+					{
+						groups: [
+							'conditional',
+							'function',
+							'import',
+							'intersection',
+							'keyword',
+							'literal',
+							'named',
+							'object',
+							'operator',
+							'tuple',
+							'union',
+							'nullish'
+						],
+						order: 'asc',
+						specialCharacters: 'keep',
+						type: 'alphabetical'
+					}
+				]
+			}
+		})
+	}
+
+	if (options.import) {
+		configs.unshift({
+			name: '@afpia/simple-import-sort',
+			plugins: {
+				'simple-import-sort': pluginSimpleImportSort
+			},
+			rules: {
+				'simple-import-sort/exports': 'error',
+				'simple-import-sort/imports': [
+					'error',
+					{
+						groups: [
+							// External packages
+							['^node:', '^react', '^(.*react.*)$', '^'],
+							// Internal packages
+							['^(?!@(utils|assets|shared|widgets|entities|pages|features|app|ui|api)(/.*|$)).*@'],
+							// Alias imports
+							['^(@utils|@assets|@shared|@widgets|@entities|@pages|@features|@app|@ui|@api)(/.*)$'],
+							// Parent imports
+							['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+							// Other relative imports
+							['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+							// Style imports
+							['^.+\\.s?css$']
+						]
+					}
+				]
+			}
+		})
+	}
+
 	return antfu(
+		{
+			ignores: [
+				'**/node_modules/**',
+				'**/dist/**',
+				'prettier.config.js',
+				'tailwind.config.js',
+				'commitlint.config.js',
+				'stylelint.config.js',
+				'eslint.config.js'
+			]
+		},
 		{
 			name: '@afpia/stylistic',
 			rules: {
@@ -85,19 +176,9 @@ export const eslint = ({ ...options }, ...configs) => {
 				'style/jsx-indent-props': [2, 'tab'],
 				'style/jsx-wrap-multilines': ['error', { declaration: 'parens' }],
 				'jsonc/indent': ['error', 'tab'],
-				'style/indent-binary-ops': ['error', 'tab']
+				'style/indent-binary-ops': ['error', 'tab'],
+				'style/jsx-one-expression-per-line': ['warn', 'single-line']
 			}
-		},
-		{
-			ignores: [
-				'**/node_modules/**',
-				'**/dist/**',
-				'prettier.config.js',
-				'tailwind.config.js',
-				'commitlint.config.js',
-				'stylelint.config.js',
-				'eslint.config.js'
-			]
 		},
 		{
 			name: '@afpia/rewrite',
@@ -109,85 +190,12 @@ export const eslint = ({ ...options }, ...configs) => {
 				'no-warning-comments': ['warn', { terms: ['todo', 'fixme', 'mb', 'note'], location: 'anywhere' }],
 				'no-inline-comments': 'error',
 				'prefer-arrow-callback': 'warn',
-				'arrow-body-style': ['warn', 'as-needed']
-			}
-		},
-		{
-			name: '@afpia/perfectionist',
-			rules: {
-				'perfectionist/sort-interfaces': [
-					'error',
-					{
-						groups: ['unknown', 'method', 'multiline'],
-						order: 'asc',
-						type: 'alphabetical'
-					}
-				],
-				'perfectionist/sort-jsx-props': [
-					'error',
-					{
-						customGroups: {
-							callback: 'on*'
-						},
-						groups: ['unknown', 'shorthand', 'multiline', 'callback'],
-						order: 'asc',
-						type: 'alphabetical'
-					}
-				],
-				'perfectionist/sort-union-types': [
-					'error',
-					{
-						groups: [
-							'conditional',
-							'function',
-							'import',
-							'intersection',
-							'keyword',
-							'literal',
-							'named',
-							'object',
-							'operator',
-							'tuple',
-							'union',
-							'nullish'
-						],
-						order: 'asc',
-						specialCharacters: 'keep',
-						type: 'alphabetical'
-					}
-				]
-			}
-		},
-		{
-			name: '@afpia/simple-import-sort',
-			plugins: {
-				'simple-import-sort': pluginSimpleImportSort
-			},
-			rules: {
+				'arrow-body-style': ['warn', 'as-needed'],
+				'n/prefer-global/process': 'warn',
 				'perfectionist/sort-imports': 'off',
 				'perfectionist/sort-named-imports': 'off',
-				'import/no-default-export': 'warn',
 				'import/newline-after-import': 'warn',
-				'simple-import-sort/exports': 'error',
-				'simple-import-sort/imports': [
-					'error',
-					{
-						groups: [
-							// External packages
-							['^node:', '^react', '^(.*react.*)$', '^'],
-							// Internal packages
-							['^(?!@(utils|assets|shared|widgets|entities|pages|features|app|ui|api)(/.*|$)).*@'],
-							// Alias imports
-							['^(@utils|@assets|@shared|@widgets|@entities|@pages|@features|@app|@ui|@api)(/.*)$'],
-							// Parent imports
-							['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-							// Other relative imports
-							['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-							// Style imports
-							['^.+\\.s?css$']
-						]
-					}
-				]
+				'import/no-default-export': 'warn'
 			}
 		},
 		...configs

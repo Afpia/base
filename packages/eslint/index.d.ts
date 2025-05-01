@@ -2,6 +2,9 @@ declare module '@afpia/eslint' {
 	declare type Eslint = (
 		options?: import('@antfu/eslint-config').OptionsConfig & {
 			jsxA11y?: boolean
+			next?: boolean
+			perfectionist?: boolean
+			import?: boolean
 		},
 		...configs: import('@antfu/eslint-config').Awaitable<
 			| import('@antfu/eslint-config').TypedFlatConfigItem
