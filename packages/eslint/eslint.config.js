@@ -137,19 +137,8 @@ export const eslint = ({ ...options }, ...configs) => {
 		})
 	}
 
-	return antfu(
-		{
-			ignores: [
-				'**/node_modules/**',
-				'**/dist/**',
-				'prettier.config.js',
-				'tailwind.config.js',
-				'commitlint.config.js',
-				'stylelint.config.js',
-				'eslint.config.js'
-			]
-		},
-		{
+	if (options.stylistic) {
+		configs.unshift({
 			name: '@afpia/stylistic',
 			rules: {
 				'style/indent': 'off',
@@ -175,10 +164,28 @@ export const eslint = ({ ...options }, ...configs) => {
 				'style/arrow-parens': ['error', 'always'],
 				'style/jsx-indent-props': [2, 'tab'],
 				'style/jsx-wrap-multilines': ['error', { declaration: 'parens' }],
-				'jsonc/indent': ['error', 'tab'],
 				'style/indent-binary-ops': ['error', 'tab'],
 				'style/jsx-one-expression-per-line': ['warn', { allow: 'single-line' }]
 			}
+		})
+	}
+
+	return antfu(
+		{
+			stylistic: options.stylistic ?? false,
+			react: options.react ?? false,
+			typescript: options.typescript ?? false
+		},
+		{
+			ignores: [
+				'**/node_modules/**',
+				'**/dist/**',
+				'prettier.config.js',
+				'tailwind.config.js',
+				'commitlint.config.js',
+				'stylelint.config.js',
+				'eslint.config.js'
+			]
 		},
 		{
 			name: '@afpia/rewrite',
@@ -195,7 +202,8 @@ export const eslint = ({ ...options }, ...configs) => {
 				'perfectionist/sort-imports': 'off',
 				'perfectionist/sort-named-imports': 'off',
 				'import/newline-after-import': 'warn',
-				'import/no-default-export': 'warn'
+				'import/no-default-export': 'warn',
+				'jsonc/indent': ['error', 'tab']
 			}
 		},
 		...configs
