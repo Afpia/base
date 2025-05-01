@@ -177,7 +177,7 @@ export const eslint = ({ ...options }, ...configs) => {
 				'style/jsx-wrap-multilines': ['error', { declaration: 'parens' }],
 				'jsonc/indent': ['error', 'tab'],
 				'style/indent-binary-ops': ['error', 'tab'],
-				'style/jsx-one-expression-per-line': ['warn', 'single-line']
+				'style/jsx-one-expression-per-line': ['warn', { allow: 'single-line' }]
 			}
 		},
 		{
