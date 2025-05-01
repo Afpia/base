@@ -2,6 +2,21 @@
   "name": "@afpia/eslint",
   "entries": [
     {
+      "date": "Thu, 01 May 2025 10:22:27 GMT",
+      "version": "1.3.1",
+      "tag": "@afpia/eslint_v1.3.1",
+      "comments": {
+        "patch": [
+          {
+            "author": "nikiprostoff@gmail.com",
+            "package": "@afpia/eslint",
+            "commit": "not available",
+            "comment": "fix: Eslint config"
+          }
+        ]
+      }
+    },
+    {
       "date": "Thu, 01 May 2025 08:59:22 GMT",
       "version": "1.3.0",
       "tag": "@afpia/eslint_v1.3.0",
