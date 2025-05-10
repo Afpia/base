@@ -173,7 +173,7 @@ export const eslint = ({ ...options }, ...configs) => {
 	return antfu(
 		{
 			stylistic: options.stylistic ?? false,
-			react: options.react ?? false,
+			react: false,
 			typescript: options.typescript ?? false
 		},
 		{
