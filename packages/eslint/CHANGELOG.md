@@ -1,8 +1,16 @@
 # Change Log - @afpia/eslint
 
-<!-- This log was last generated on Thu, 01 May 2025 11:39:13 GMT and should not be manually modified. -->
+<!-- This log was last generated on Sat, 10 May 2025 12:20:29 GMT and should not be manually modified. -->
 
 <!-- Start content -->
+
+## 1.3.3
+
+Sat, 10 May 2025 12:20:29 GMT
+
+### Patches
+
+- fix: Eslint config (nikiprostoff@gmail.com)
 
 ## 1.3.2
 
