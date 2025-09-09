@@ -7,7 +7,21 @@
 - Stylelint
 - Commitlint
 
-___
+# EditorConfig
+
+```.editorconfig
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = false
+indent_style = tab
+indent_size = 2
+tab_width = 2
+trim_trailing_whitespace = true
+```
+
 
 # BeachBall 🏖️
 
