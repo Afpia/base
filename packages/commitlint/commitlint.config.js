@@ -1,5 +1,32 @@
+async function createEmojiParser() {
+  const emojiRegexPart = Object.values(config.prompt.questions.type.enum)
+    .map((value) => value.emoji.trim())
+    .join("|");
+
+  const parserOpts = {
+    breakingHeaderPattern: new RegExp(
+      `^(?:${emojiRegexPart})\\s+(\\w*)(?:\\((.*)\\))?!:\\s+(.*)$`,
+    ),
+    headerPattern: new RegExp(
+      `^(?:${emojiRegexPart})\\s+(\\w*)(?:\\((.*)\\))?!?:\\s+(.*)$`,
+    ),
+  };
+
+  const emojiParser = merge({}, await createPreset(), {
+    conventionalChangelog: { parserOpts },
+    parserOpts,
+    recommendedBumpOpts: { parserOpts },
+  });
+
+  return emojiParser;
+}
+
+const emojiParser = await createEmojiParser();
+
 /** @type {import('@commitlint/types').UserConfig} */
+
 export default {
+	parserPreset: emojiParser,
   rules: {
     "body-leading-blank": [1, "always"], // body начинается с пустой строки
     "body-max-line-length": [2, "always", 100], // body макс символы
@@ -9,6 +36,7 @@ export default {
 
     "header-max-length": [2, "always", 100], // header макс символы
     "header-full-stop": [2, "never", "."], // нельзя в заголовке писать точку в конце
+		"header-case": [2, "always", "lower-case"], // header должен быть в формате lower-case
     "header-trim": [2, "always"], // нельзя в начале и в конце ставить пробел
 
     "subject-empty": [2, "never"], // описание проделанного в заголовке не должно быть пустым
@@ -49,57 +77,58 @@ export default {
           feat: {
             description: "Добавление нового",
             title: "Features",
-            emoji: "✨",
+            emoji: "✨ ",
           },
           fix: {
             description: "Исправление бага",
             title: "Bug Fixes",
-            emoji: "🐛",
+            emoji: "🐛  ",
           },
           docs: {
             description: "Исправление документации",
             title: "Documentation",
-            emoji: "📚",
+            emoji: "📚 ",
           },
           style: {
             description: "Изменения, не влияющие на смысл кода",
             title: "Styles",
-            emoji: "💎",
+            emoji: "💎 ",
           },
           refactor: {
             description: "Рефакторинг кода",
             title: "Code Refactoring",
-            emoji: "🚀",
+            emoji: "🚀 ",
           },
           test: {
             description:
               "Добавление недостающих тестов или исправление существующих",
             title: "Tests",
-            emoji: "🚨",
+            emoji: "🚨 ",
           },
           build: {
             description:
               "Изменения, влияющие на систему сборки или внешние зависимости",
             title: "Builds",
-            emoji: "🛠",
+            emoji: "🛠 ",
           },
           chore: {
             description:
               "Изменение файлов, которые не являются частью проекта (конфиги, библиотеки)",
             title: "Chores",
-            emoji: "♻️",
+            emoji: "♻️ ",
           },
           revert: {
             description: "Отменяет предыдущую фиксацию",
             title: "Reverts",
-            emoji: "🗑",
+            emoji: "🗑 ",
           },
           init: {
             description: "Инициализирует проект",
             title: "Init",
-            emoji: "🔥",
+            emoji: "🔥 ",
           },
         },
+				emojiInHeader: true,
       },
       scope: {
         description:

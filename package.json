@@ -25,12 +25,10 @@
 		"packages/*"
 	],
 	"scripts": {
-		"publish": "beachball publish --yes",
-		"check": "beachball check",
-		"change": "beachball change --no-commit"
+		"fdas": "echo 'Hello World!'"
 	},
 	"packageManager": "pnpm@9.10.0",
 	"devDependencies": {
-		"beachball": "^2.51.0"
+		"@changesets/cli": "^2.29.8"
 	}
 }
