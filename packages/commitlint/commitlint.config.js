@@ -1,5 +1,62 @@
+import createPreset from "conventional-changelog-conventionalcommits";
+import { merge } from "lodash-es";
+
+const typeEnum = {
+  feat: {
+    description: "Добавление нового",
+    title: "Features",
+    emoji: "✨ ",
+  },
+  fix: {
+    description: "Исправление бага",
+    title: "Bug Fixes",
+    emoji: "🐛  ",
+  },
+  docs: {
+    description: "Исправление документации",
+    title: "Documentation",
+    emoji: "📚 ",
+  },
+  style: {
+    description: "Изменения, не влияющие на смысл кода",
+    title: "Styles",
+    emoji: "💎 ",
+  },
+  refactor: {
+    description: "Рефакторинг кода",
+    title: "Code Refactoring",
+    emoji: "🚀 ",
+  },
+  test: {
+    description: "Добавление недостающих тестов или исправление существующих",
+    title: "Tests",
+    emoji: "🚨 ",
+  },
+  build: {
+    description: "Изменения, влияющие на систему сборки или внешние зависимости",
+    title: "Builds",
+    emoji: "🛠️ ",
+  },
+  chore: {
+    description:
+      "Изменение файлов, которые не являются частью проекта (конфиги, библиотеки)",
+    title: "Chores",
+    emoji: "♻️ ",
+  },
+  revert: {
+    description: "Отменяет предыдущую фиксацию",
+    title: "Reverts",
+    emoji: "🗑️ ",
+  },
+  init: {
+    description: "Инициализирует проект",
+    title: "Init",
+    emoji: "🔥 ",
+  },
+};
+
 async function createEmojiParser() {
-  const emojiRegexPart = Object.values(config.prompt.questions.type.enum)
+  const emojiRegexPart = Object.values(typeEnum)
     .map((value) => value.emoji.trim())
     .join("|");
 
@@ -24,9 +81,8 @@ async function createEmojiParser() {
 const emojiParser = await createEmojiParser();
 
 /** @type {import('@commitlint/types').UserConfig} */
-
 export default {
-	parserPreset: emojiParser,
+  parserPreset: emojiParser,
   rules: {
     "body-leading-blank": [1, "always"], // body начинается с пустой строки
     "body-max-line-length": [2, "always", 100], // body макс символы
@@ -73,62 +129,8 @@ export default {
     questions: {
       type: {
         description: "Выберите тип изменений, которые вы собираетесь внести",
-        enum: {
-          feat: {
-            description: "Добавление нового",
-            title: "Features",
-            emoji: "✨ ",
-          },
-          fix: {
-            description: "Исправление бага",
-            title: "Bug Fixes",
-            emoji: "🐛  ",
-          },
-          docs: {
-            description: "Исправление документации",
-            title: "Documentation",
-            emoji: "📚 ",
-          },
-          style: {
-            description: "Изменения, не влияющие на смысл кода",
-            title: "Styles",
-            emoji: "💎 ",
-          },
-          refactor: {
-            description: "Рефакторинг кода",
-            title: "Code Refactoring",
-            emoji: "🚀 ",
-          },
-          test: {
-            description:
-              "Добавление недостающих тестов или исправление существующих",
-            title: "Tests",
-            emoji: "🚨 ",
-          },
-          build: {
-            description:
-              "Изменения, влияющие на систему сборки или внешние зависимости",
-            title: "Builds",
-            emoji: "🛠 ",
-          },
-          chore: {
-            description:
-              "Изменение файлов, которые не являются частью проекта (конфиги, библиотеки)",
-            title: "Chores",
-            emoji: "♻️ ",
-          },
-          revert: {
-            description: "Отменяет предыдущую фиксацию",
-            title: "Reverts",
-            emoji: "🗑 ",
-          },
-          init: {
-            description: "Инициализирует проект",
-            title: "Init",
-            emoji: "🔥 ",
-          },
-        },
-				emojiInHeader: true,
+        enum: typeEnum,
+    		emojiInHeader: true,
       },
       scope: {
         description:

@@ -1,5 +1,3 @@
 import { prettier } from '@afpia/prettier'
 
-export default {
-	...prettier
-}
+export default prettier()

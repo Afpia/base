@@ -1,1 +1,3 @@
-export { default } from '@afpia/prettier'
+import { prettier } from '@afpia/prettier'
+
+export default prettier()

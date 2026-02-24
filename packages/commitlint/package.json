@@ -1,6 +1,6 @@
 {
   "name": "@afpia/commitlint",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Commitlint config",
   "main": "index.js",
   "type": "module",
@@ -15,9 +15,12 @@
   "license": "MIT",
   "dependencies": {
     "@commitlint/cli": "^20.4.0",
+    "@commitlint/config-conventional": "^20.4.2",
     "@commitlint/cz-commitlint": "^20.4.0",
     "@commitlint/types": "^20.4.0",
-    "commitizen": "^4.3.1"
+    "commitizen": "^4.3.1",
+    "conventional-changelog-conventionalcommits": "^9.1.0",
+    "lodash-es": "^4.17.23"
   },
   "devDependencies": {
     "@afpia/prettier": "*"
